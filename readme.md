@@ -1,16 +1,38 @@
-#[Redux](https://github.com/reactjs/redux)
+<!--
+Creator: <Name>
+Market: SF
+-->
 
-##Learning Objectives
+![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-* Articulate the Redux pattern
+# Workshop Title
+
+### Why is this important?
+<!-- framing the "why" in big-picture/real world examples -->
+*This workshop is important because:*
+
+Maintaining track of an application's state is hard. Redux's patterns help our data stay in sync when our users take asychronous actions.
+
+### What are the objectives?
+<!-- specific/measurable goal for students to achieve -->
+*After this workshop, developers will be able to:*
+
+* Illustrate Redux's data-flow
 * Keep track of your application's state with a **store** 
 * Define and emit **actions** to update your state
 * Calculate diffs to your state with **reducers**
 * Integrate Redux into a React component
 
+### Where should we be now?
+<!-- call out the skills that are prerequisites -->
+*Before this workshop, developers should already be able to:*
+
+* Write JavaScript
+* Build a simple application with React
+
 ##Philosophy
 
-Redux's main purpose is to **manage the state of an application**. It's patterns are expressly inspired by [Flux](https://github.com/facebook/flux), Facebook recommended way to manage state amongst React components and [Elm](https://github.com/elm-lang), a functional programming language.
+[Redux](https://github.com/reactjs/redux)'s main purpose is to **manage the state of an application**. It's patterns are expressly inspired by [Flux](https://github.com/facebook/flux), Facebook recommended way to manage state amongst React components and [Elm](https://github.com/elm-lang), a functional programming language.
 
 ###Three Principles
 
