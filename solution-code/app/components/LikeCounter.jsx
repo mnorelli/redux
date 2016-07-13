@@ -11,7 +11,7 @@ const LikeCounter = React.createClass({
   render() {
     return (
       <div>
-        <h3>{this.props.likeCount}</h3>
+        <h3>{store.getState().likes}</h3>
         <button onClick={this.like}>Like</button>
         <button onClick={this.dislike}>Dislike</button>
       </div>

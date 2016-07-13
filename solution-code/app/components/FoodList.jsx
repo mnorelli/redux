@@ -33,7 +33,7 @@ const FoodList = React.createClass({
         </form>
         {/* list of the foods */}
         <ul>
-          {this.props.foods.map((food, index) =>
+          {store.getState().foods.map((food, index) =>
             <li key={index}>
               {food.name}
             </li>
