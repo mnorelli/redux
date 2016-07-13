@@ -5,7 +5,7 @@ Market: SF
 
 ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-# Workshop Title
+# Redux
 
 ### Why is this important?
 <!-- framing the "why" in big-picture/real world examples -->
@@ -241,7 +241,7 @@ const LikeCounter = React.createClass({
   render() {
     return (
       <div>
-        <h3>{this.props.likeCount}</h3>
+        <h3>{store.getState().likes}</h3>
         <button onClick={this.like}>Like</button>
       </div>
     )
@@ -256,7 +256,7 @@ Now our `renderView` function can get updated to re-render our react component a
 ```js
 const renderView = () => {
   ReactDOM.render(
-    <LikeCounter likeCount={store.getState()}/>,
+    <LikeCounter/>,
     document.getElementById("like-counter")
   )
 }
@@ -303,7 +303,7 @@ const LikeCounter = React.createClass({
   render() {
     return (
       <div>
-        <h3>{this.props.likeCount}</h3>
+        <h3>{store.getState().likes}</h3>
         <button onClick={this.like}>Like</button>
         <button onClick={this.dislike}>Dislike</button>
       </div>
@@ -415,7 +415,7 @@ const FoodList = React.createClass({
         </form>
         {/* list of the foods */}
         <ul>
-          {this.props.foods.map((food, index) =>
+          {store.getState().foods.map((food, index) =>
             <li key={index}>
               {food.name}
             </li>
@@ -434,8 +434,8 @@ const App = React.createClass({
   render() {
     return(
       <div>
-        <FoodList foods={store.getState().foods}/>
-        <LikeCounter likeCount={store.getState().likes}/>
+        <FoodList/>
+        <LikeCounter/>
       </div>
     )
   }
@@ -511,7 +511,7 @@ const LikeCounter = React.createClass({
   render() {
     return (
       <div>
-        <h3>{this.props.likeCount}</h3>
+        <h3>store.getState().likes</h3>
         <button onClick={this.like}>Like</button>
         <button onClick={this.dislike}>Dislike</button>
       </div>
@@ -551,7 +551,7 @@ const FoodList = React.createClass({
         </form>
         {/* list of the foods */}
         <ul>
-          {this.props.foods.map((food, index) =>
+          {store.getState().foods.map((food, index) =>
             <li key={index}>
               {food.name}
             </li>
@@ -566,8 +566,8 @@ const App = React.createClass({
   render() {
     return(
       <div>
-        <FoodList foods={store.getState().foods}/>
-        <LikeCounter likeCount={store.getState().likes}/>
+        <FoodList/>
+        <LikeCounter/>
       </div>
     )
   }
@@ -611,6 +611,7 @@ Add a yumminess (or any other) input to your `FoodList` component; update and re
 * A [cartoon intro](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6#.wcukeamlp) to redux
 * [Redux way of doing things](http://www.theodo.fr/blog/2016/03/getting-started-with-react-redux-and-immutable-a-test-driven-tutorial-part-1/)
 * [Full-stack Redux](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html)
+* [3REE](http://blog.workshape.io/the-3ree-stack-react-redux-rethinkdb-express-js/) Stack (React, Redux, RethinkDB, Express)
 
 ##Final Questions
 
@@ -631,7 +632,7 @@ A reducer takes in an **original state** and an **action type** to decide what t
 
 <details><summary>Why do Redux and React play well together? Can you use Redux with other client-side frameworks?</summary>
 
-React is just a **view layer**, so Redux helps **control the state** of the application as your data changes.
+React **displays the state** (view), while Redux **manages the state** (model) of the application.
 
 </details>
 
